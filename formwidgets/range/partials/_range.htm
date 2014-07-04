@@ -1,0 +1,18 @@
+<input type="text" id="prog" name="<?php echo $name; ?>" value="<?php echo $value; ?>" />
+
+<script type="text/javascript">
+$(document).ready(function(){
+     $("#prog").ionRangeSlider({
+            min: 0,
+            max: 100,
+            from: '<?php echo $value; ?>',
+            to: 100,
+            type: 'single',
+            step: 1,
+            postfix: "%",
+            prettify: true,
+            hasGrid: true
+    });
+
+});
+</script>

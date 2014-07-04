@@ -1,0 +1,20 @@
+# ===================================
+#  Column Definitions
+# ===================================
+
+columns:
+
+  title:
+    label: Title
+    searchable: true
+
+  priority:
+    label: Priority
+
+  deadline:
+    label: Deadline
+    type: datetime
+
+  progress:
+    label: Progress
+    type: number

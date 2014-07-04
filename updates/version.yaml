@@ -1,0 +1,10 @@
+1.0.1:
+    - First version
+    - create_todo_table.php
+    - create_projects_table.php
+1.0.2:
+    - Bug fixes (no records message and progress bar value)
+1.0.3:
+    - Progress bar fixed
+    - Removed sidebar
+    - Added rules 

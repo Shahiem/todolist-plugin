@@ -1,0 +1,27 @@
+# ===================================
+#  Field Definitions
+# ===================================
+
+fields:
+   title:
+      label: Title
+
+   description:
+      type: textarea
+      label: Description
+
+   progress:
+      type: ShahiemSeymor\Todo\FormWidgets\Range
+      label: Progress
+   priority:
+      type: balloon-selector
+      label: Priority
+      default: normal
+      options:
+        high: High
+        normal: Normal
+        low: Low
+   deadline:
+      label: Deadline
+      span: left
+      type: datepicker
