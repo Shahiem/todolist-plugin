@@ -7,4 +7,6 @@
 1.0.3:
     - Progress bar fixed
     - Removed sidebar
-    - Added rules 
+    - Added rules
+    - Added progress bars
+    - Added required asterisk 

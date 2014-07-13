@@ -9,8 +9,11 @@ use BackendAuth;
 
 class Todo extends Model
 {
+
+    use \October\Rain\Database\Traits\Validation;
+
     public $table = 'shahiemseymor_todo';   
-    protected $fillable = ['title', 'description', 'deadline', 'priority', 'progress'];
+    protected $fillable = ['title', 'description', 'deadline', 'priority', 'progress_val'];
     public $dates = ['deadline'];
 
     public $rules = [
@@ -22,4 +25,24 @@ class Todo extends Model
 	{
 	    $this->user_id = BackendAuth::getUser()->id;
 	}
+
+    public function getProgressAttribute()
+    {
+    
+        $color = '';
+        if($this->progress_val > 50 && $this->progress_val < 65)
+        {
+            $color = 'progress-bar-warning';
+        }
+        elseif($this->progress_val == 100)
+        {
+            $color = 'progress-bar-success';
+        }
+
+        $progressBar = '<div class="progress">
+                          <div class="progress-bar '.$color.'" role="progressbar" style="width: '.$this->progress_val.'%;">'.$this->progress_val.'%</div>
+                        </div>';
+        return $progressBar;
+    }
+    
 }

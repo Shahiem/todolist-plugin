@@ -103,4 +103,5 @@ class Projects extends Controller
 
         $this->getClassExtension('Backend.Behaviors.FormController')->update($id);
     }
+
 }
