@@ -10,8 +10,9 @@ use BackendAuth;
 class Project extends Model
 {
 
+    use \October\Rain\Database\Traits\Purgeable;
     use \October\Rain\Database\Traits\Validation;
-
+    
     public $table = 'shahiemseymor_todo_projects'; 
 	protected $fillable = ['title', 'description'];
 	protected $purgeable = ['assign'];

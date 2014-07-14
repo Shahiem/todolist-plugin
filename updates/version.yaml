@@ -10,3 +10,6 @@
     - Added rules
     - Added progress bars
     - Added required asterisk 
+1.0.4:
+    - Purgeable assign field fixed
+    - Table bug fix

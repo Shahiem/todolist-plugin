@@ -30,7 +30,7 @@ class CreateProjectsTable extends Migration
 
     public function down()
     {
-        Schema::drop('shahiemseymor_todo');
+        Schema::drop('shahiemseymor_todo_projects');
         Schema::drop('shahiemseymor_todo_projects_assigned');
     }
 
