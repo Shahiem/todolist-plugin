@@ -21,16 +21,15 @@ class Range extends FormWidgetBase
 
     public function prepareVars()
     {
-         $this->vars['name'] = $this->formField->getName();
+         $this->vars['name']  = $this->formField->getName();
          $this->vars['value'] = $this->model->{$this->columnName};
     }
 
     public function loadAssets()
     {
         $this->addCss('css/normalize.min.css');
-        $this->addCss('css/ion.rangeSlider.css');
-        $this->addCss('css/ion.rangeSlider.skinFlat.css');
-        $this->addJs('js/ion-rangeSlider/ion.rangeSlider.min.js');  
+        $this->addCss('css/jquery.nouislider.css');
+        $this->addJs('js/jquery.nouislider.min.js');  
     }
 
 }

@@ -3,7 +3,6 @@
 # ===================================
 
 columns:
-
   title:
     label: Title
     searchable: true
@@ -14,6 +13,11 @@ columns:
   deadline:
     label: Deadline
     type: datetime
+
+  creator:
+        label: Creator
+        relation: task
+        select: @login
 
   progress:
     label: Progress

@@ -13,3 +13,6 @@
 1.0.4:
     - Purgeable assign field fixed
     - Table bug fix
+1.0.5:
+    - Bug fixes, improved ui
+    - rename_progress_field.php

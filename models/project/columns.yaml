@@ -18,7 +18,7 @@ columns:
 
   creator:
         label: Creator
-        relation: Project
+        relation: project
         select: @login
 
   created_at:

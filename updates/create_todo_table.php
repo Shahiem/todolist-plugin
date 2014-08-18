@@ -16,7 +16,7 @@ class CreateTodoTable extends Migration
             $table->string('priority');
             $table->text('description');
             $table->timestamp('deadline');
-            $table->integer('progress');
+            $table->integer('progress_val');
             $table->integer('project_id');
             $table->integer('user_id');
             $table->timestamps();

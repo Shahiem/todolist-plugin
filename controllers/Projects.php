@@ -17,8 +17,8 @@ class Projects extends Controller
         'Backend.Behaviors.RelationController',
     ];
 
-    public $formConfig = 'config_form.yaml';
-    public $listConfig = 'config_list.yaml';
+    public $formConfig     = 'config_form.yaml';
+    public $listConfig     = 'config_list.yaml';
     public $relationConfig = 'config_relation.yaml';
 
     public function __construct()
@@ -54,8 +54,8 @@ class Projects extends Controller
             $assign = explode(",", post('Project[assign]'));
             foreach($assign as $assigned)
             {
-                $as = new Assign;
-                $as->user_id = $assigned;
+                $as             = new Assign;
+                $as->user_id    = $assigned;
                 $as->project_id = $lastId[0]->AUTO_INCREMENT;
                 $as->save();
 
@@ -80,11 +80,10 @@ class Projects extends Controller
             $assign = explode(",", post('Project[assign]'));
             foreach($assign as $assigned)
             {
-                $as = new Assign;
-                $as->user_id = $assigned;
+                $as             = new Assign;
+                $as->user_id    = $assigned;
                 $as->project_id = $recordId;
                 $as->save();
-
             }
         }
 
@@ -96,8 +95,8 @@ class Projects extends Controller
         $query = Project::where('id', '=', $id)->get();
         foreach($query as $fetch)
         {
-            $this->vars['user_id'] = $fetch->user_id;
-            $this->vars['myId'] = BackendAuth::getUser()->id;    
+            $this->vars['user_id']    = $fetch->user_id;
+            $this->vars['myId']       = BackendAuth::getUser()->id;    
             $this->vars['isAssigned'] = Assign::checkAssigned(BackendAuth::getUser()->id, $fetch->id);  
         }
 
