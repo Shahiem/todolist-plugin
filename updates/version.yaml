@@ -16,3 +16,5 @@
 1.0.5:
     - Bug fixes, improved ui
     - rename_progress_field.php
+1.0.6:
+    - Bug fix with progress column

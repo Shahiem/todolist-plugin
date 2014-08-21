@@ -8,18 +8,24 @@ class RenameProgressField extends Migration
 
     public function up()
     {
-        Schema::table('shahiemseymor_todo', function($table)
+        if(Schema::hasColumn('shahiemseymor_todo', 'progress'))
         {
-            $table->renameColumn('progress', 'progress_val');
-        });
+            Schema::table('shahiemseymor_todo', function($table)
+            {
+                $table->renameColumn('progress', 'progress_val');
+            });
+        }
     }
 
     public function down()
     {
-        Schema::table('shahiemseymor_todo', function($table)
+        if(Schema::hasColumn('shahiemseymor_todo', 'progress'))
         {
-            $table->dropColumn('progress');
-        });
+            Schema::table('shahiemseymor_todo', function($table)
+            {
+                $table->dropColumn('progress');
+            });
+        }
     }
 
 }
