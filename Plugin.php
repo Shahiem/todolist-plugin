@@ -16,10 +16,10 @@ class Plugin extends PluginBase
     public function pluginDetails()
     {
         return [
-            'name'        => 'Todo Plugin / Task manager',
-            'description' => 'This plugin allows backend users to manage projects and tasks.',
-            'author'      => 'ShahiemSeymor',
-            'icon'        => 'icon-check-square-o'
+            'name' => 'Todo Plugin / Task manager',
+            'description' => 'An awesome task manager / Todo plugin..',
+            'author' => 'ShahiemSeymor',
+            'icon' => 'icon-bullhorn'
         ];
     }
 
@@ -29,10 +29,11 @@ class Plugin extends PluginBase
             'todo' => [
                 'label'       => 'Todo',
                 'url'         => Backend::url('shahiemseymor/todo/projects'),
-                'icon'        => 'icon-check-square-o',
+                'icon'        => 'icon-bullhorn',
                 'order'       => 500,
-                'sideMenu'    => [
-                    'list'    => [
+
+                'sideMenu' => [
+                    'list' => [
                         'label'       => 'Projects',
                         'icon'        => 'icon-tasks',
                         'url'         => Backend::url('shahiemseymor/todo/projects'),

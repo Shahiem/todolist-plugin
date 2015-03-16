@@ -58,7 +58,6 @@ class Projects extends Controller
                 $as->user_id    = $assigned;
                 $as->project_id = $lastId[0]->AUTO_INCREMENT;
                 $as->save();
-
             }
         }
 

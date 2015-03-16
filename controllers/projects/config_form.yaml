@@ -3,7 +3,7 @@
 # ===================================
 
 name: Project
-form: @/plugins/shahiemseymor/todo/models/project/fields.yaml
+form: ~/plugins/shahiemseymor/todo/models/project/fields.yaml
 modelClass: ShahiemSeymor\Todo\Models\Project
 defaultRedirect: shahiemseymor/todo/projects
 
