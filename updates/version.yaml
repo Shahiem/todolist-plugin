@@ -18,3 +18,5 @@
     - rename_progress_field.php
 1.0.6:
     - Bug fix with progress column
+1.0.7:
+    - Update for RC

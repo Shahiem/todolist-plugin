@@ -3,7 +3,7 @@
 # ===================================
 
 title: Todo
-list: @/plugins/shahiemseymor/todo/models/todo/columns.yaml
+list: ~/plugins/shahiemseymor/todo/models/todo/columns.yaml
 modelClass: ShahiemSeymor\Todo\Models\Todo
 recordUrl: shahiemseymor/todo/todo/update/:id
 noRecordsMessage: backend::lang.list.no_records

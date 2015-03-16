@@ -3,7 +3,7 @@
 # ===================================
 
 name: Task
-form: @/plugins/shahiemseymor/todo/models/todo/fields.yaml
+form: ~/plugins/shahiemseymor/todo/models/todo/fields.yaml
 modelClass: ShahiemSeymor\Todo\Models\Todo
 defaultRedirect: shahiemseymor/todo/todo
 

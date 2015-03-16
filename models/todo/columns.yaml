@@ -15,9 +15,10 @@ columns:
     type: datetime
 
   creator:
-        label: Creator
-        relation: task
-        select: @login
+    label: Creator
+    relation: task
+    select: @login
+    type: section
 
   progress:
     label: Progress

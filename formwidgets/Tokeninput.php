@@ -26,7 +26,7 @@ class Tokeninput extends FormWidgetBase
     public function prepareVars()
     {
         $this->vars['name']  = $this->formField->getName();
-        $this->vars['value'] = $this->model->{$this->columnName};
+        $this->vars['value'] = $this->model->{$this->valueFrom};
         $this->vars['myID']  = BackendAuth::getUser()->id;
         $this->vars['users'] = User::all();
     

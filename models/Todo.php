@@ -14,7 +14,7 @@ class Todo extends Model
 
     public $table       = 'shahiemseymor_todo'; 
     public $dates       = ['deadline'];
-    public $belongsTo   = ['task'  => ['Backend\Models\User', 'foreignKey' => 'user_id']];
+    public $belongsTo   = ['task'  => ['Backend\Models\User', 'key' => 'user_id']];
     protected $fillable = ['title', 'description', 'deadline', 'priority', 'progress_val'];
 
     public $rules = [

@@ -17,9 +17,10 @@ columns:
     select: (SELECT COUNT(1) FROM shahiemseymor_todo WHERE project_id = shahiemseymor_todo_projects.id)
 
   creator:
-        label: Creator
-        relation: project
-        select: @login
+    label: Creator
+    relation: project
+    select: @login
+    type: section
 
   created_at:
     label: Created at

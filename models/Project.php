@@ -19,7 +19,7 @@ class Project extends Model
 	protected $purgeable  = ['assign'];
 
 	public $hasMany       = ['todo'     => ['ShahiemSeymor\Todo\Models\Todo']];	
-    public $belongsTo     = ['project'  => ['Backend\Models\User', 'foreignKey' => 'user_id']];
+    public $belongsTo     = ['project'  => ['Backend\Models\User', 'key' => 'user_id']];
     public $rules         = ['title'    => 'required'];
 
     public function beforeCreate()
