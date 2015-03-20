@@ -16,10 +16,11 @@ class Plugin extends PluginBase
     public function pluginDetails()
     {
         return [
-            'name' => 'Todo Plugin / Task manager',
-            'description' => 'An awesome task manager / Todo plugin..',
-            'author' => 'ShahiemSeymor',
-            'icon' => 'icon-bullhorn'
+            'name'        => 'Todo List',
+            'description' => 'This plugin allows backend users to manage projects and tasks.',
+            'author'      => 'ShahiemSeymor',
+            'icon'        => 'icon-check',
+            'homepage'    => 'https://github.com/Shahiem/TodoList'
         ];
     }
 
@@ -29,9 +30,8 @@ class Plugin extends PluginBase
             'todo' => [
                 'label'       => 'Todo',
                 'url'         => Backend::url('shahiemseymor/todo/projects'),
-                'icon'        => 'icon-bullhorn',
+                'icon'        => 'icon-check',
                 'order'       => 500,
-
                 'sideMenu' => [
                     'list' => [
                         'label'       => 'Projects',
@@ -47,7 +47,7 @@ class Plugin extends PluginBase
     public function registerFormWidgets()
     {
         return [
-            'ShahiemSeymor\Todo\FormWidgets\Range' => [
+            'ShahiemSeymor\Todo\FormWidgets\Range'      => [
                 'label' => 'Range slider',
                 'alias' => 'range'
             ],

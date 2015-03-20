@@ -29,7 +29,7 @@ class Todo extends Model
 
     public function getCreatorAttribute()
     {
-        return '<img src="'.$this->task->getAvatarThumb().'" />  <span class="hidden-xs">'.ucfirst($this->task->first_name).' '.ucfirst($this->task->last_name).'</span> ('.$this->task->login.')';
+        return $this->task->first_name.' '.$this->task->last_name;
     }
 
     public function getProgressAttribute()

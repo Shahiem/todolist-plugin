@@ -1,11 +1,8 @@
 <?php 
-/**
- * Created by ShahiemSeymor.
- * Date: 6/19/14
- */
 namespace ShahiemSeymor\Todo\Models;
-use Model;
+
 use BackendAuth;
+use Model;
 
 class Project extends Model
 {
@@ -29,6 +26,7 @@ class Project extends Model
   	
   	public function getCreatorAttribute()
     {
-    	return '<img src="'.$this->project->getAvatarThumb().'" />  <span class="hidden-xs">'.ucfirst($this->project->first_name).' '.ucfirst($this->project->last_name).'</span> ('.$this->project->login.')';
+    	return $this->project->first_name.' '.$this->project->last_name;
     }
+    
 }
