@@ -57,4 +57,22 @@ class Projects extends Controller
         $this->getClassExtension('Backend.Behaviors.FormController')->update($id);
     }
 
+    public function index_onDelete()
+    {
+        if(($checkedIds = post('checked')) && is_array($checkedIds) && count($checkedIds)) 
+        {
+            foreach ($checkedIds as $projectId) 
+            {
+                if (!$project = Project::find($projectId))
+                    continue;
+
+                Assign::where('project_id', $projectId)->delete();
+                $project->delete();
+            }
+
+            Flash::success('The selected projects has been deleted successfully.');
+        }
+
+        return $this->listRefresh();
+    }
 }
