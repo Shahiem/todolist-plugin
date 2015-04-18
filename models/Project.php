@@ -3,10 +3,10 @@ namespace ShahiemSeymor\Todo\Models;
 
 use BackendAuth;
 use Model;
+use ShahiemSeymor\Todo\Models\Assign;
 
 class Project extends Model
 {
-
     use \October\Rain\Database\Traits\Purgeable;
     use \October\Rain\Database\Traits\Validation;
     
@@ -22,11 +22,44 @@ class Project extends Model
     public function beforeCreate()
 	{
 	    $this->user_id = BackendAuth::getUser()->id;
+	} 
+
+	public function afterCreate()
+	{
+        $this->save();
+
+        $assign = new static;
+        $assign->assignAdministrators($this->id);
+	}
+
+	public function afterSave()
+	{
+        $deleteModel = Assign::where('project_id', $this->id);
+
+        if($deleteModel->count() >= 1)
+            $deleteModel->delete();
+
+        $assign = new static;
+       	$assign->assignAdministrators($this->id);
 	}
   	
   	public function getCreatorAttribute()
     {
     	return $this->project->first_name.' '.$this->project->last_name;
     }
-    
+
+    public function assignAdministrators($recordId)
+    {
+    	if(post('Project[assign]') != '')
+        {
+            $administratorsList = explode(",", post('Project[assign]'));
+            foreach($administratorsList as $administratorsAssigned)
+            {
+                $assign             = new Assign;
+                $assign->user_id    = $administratorsAssigned;
+                $assign->project_id = $recordId;
+                $assign->save();
+            }
+        }
+    }
 }

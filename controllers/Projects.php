@@ -43,55 +43,10 @@ class Projects extends Controller
         })->orWhere('shahiemseymor_todo_projects.user_id', '=', BackendAuth::getUser()->id);
     }
 
-    public function create_onSave()
-    {
-        $lastId = DB::select("SELECT AUTO_INCREMENT FROM information_schema.tables WHERE table_name = 'shahiemseymor_todo_projects' LIMIT 0 , 30");
-        $result = $this->getClassExtension('Backend.Behaviors.FormController')->create_onSave();
-        $assign = explode(",", post('Project[assign]'));
-        
-        if(post('Project[assign]') != '')
-        {
-            $assign = explode(",", post('Project[assign]'));
-            foreach($assign as $assigned)
-            {
-                $as             = new Assign;
-                $as->user_id    = $assigned;
-                $as->project_id = $lastId[0]->AUTO_INCREMENT;
-                $as->save();
-            }
-        }
-
-        return $result;
-    }
-
-    public function update_onSave($recordId)
-    {
-        $result = $this->getClassExtension('Backend.Behaviors.FormController')->update_onSave($recordId);
-        
-        $as = new Assign;
-        if($as->where('project_id', '=', $recordId)->count() >= 1)
-        {
-            $as->where('project_id', '=', $recordId)->delete();
-        }
-
-        if(post('Project[assign]') != '')
-        {
-            $assign = explode(",", post('Project[assign]'));
-            foreach($assign as $assigned)
-            {
-                $as             = new Assign;
-                $as->user_id    = $assigned;
-                $as->project_id = $recordId;
-                $as->save();
-            }
-        }
-
-        return $result;
-    }
-
     public function update($id)
     {
         $query = Project::where('id', '=', $id)->get();
+        
         foreach($query as $fetch)
         {
             $this->vars['user_id']    = $fetch->user_id;
