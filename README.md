@@ -1,4 +1,4 @@
-OctoberCMS Todo List Plugin / Task manager
+OctoberCMS Todo List Plugin 
 =============
 
 This plugin allows backend users to manage projects and tasks..These tasks can be assigned to other backend users.
