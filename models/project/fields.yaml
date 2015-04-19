@@ -1,17 +1,19 @@
 # ===================================
 #  Field Definitions
 # ===================================
-
 fields:
    title:
       label: Title
       required: true
-
-   description:
-      type: textarea
-      label: Description
+      span: left
 
    assign:
       type: ShahiemSeymor\Todo\FormWidgets\Tokeninput
       label: Assign to
+      span: right
+
+   description:
+      type: textarea
+      label: Description
+      size: mini
 
