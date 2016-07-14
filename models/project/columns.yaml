@@ -17,7 +17,7 @@ columns:
    creator:
       label: Creator
       relation: project
-      select: @login
+      select: '@login'
       type: section
 
    created_at:

@@ -16,7 +16,7 @@ columns:
   creator:
     label: Creator
     relation: task
-    select: @login
+    select: '@login'
     type: section
 
   progress:
